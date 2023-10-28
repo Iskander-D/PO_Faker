@@ -4,9 +4,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.awt.font.ImageGraphicAttribute;
-import java.io.File;
-
 import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -31,12 +28,12 @@ public class TextBoxTests {
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("0506488515");
 
-        //$("#dateOfBirthInput").byValue("21 Sep 1993");
-        //$("#dateOfBirthInput").click();
-        //$(".react-datepicker__year-select").click();
-        //$(byValue("1993")).click();
-        //$(".react-datepicker__month-select").selectOption("September");
-       // $("[aria-label='Choose Friday, September 24th, 1999' ]").click();
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").click();
+        $(byValue("9")).click();
+        $(".react-datepicker__year-select").click();
+        $(byValue("1993")).click();
+        $(".react-datepicker__day--021").click();
 
         $("#subjectsInput").val("Arts").pressEnter();
         $("#subjectsInput").val("History").pressEnter();
@@ -55,8 +52,3 @@ public class TextBoxTests {
     }
 
 }
-//$("#dateOfBirthInput").setValue("21 Sep 1993");
-//$(".react-datepicker__year-select").click();
-// $(byValue("21 sep 1993")).click();
-// $(".react-datepicker__month-select").selectOption("September");
-// $("[aria-label='Choose Tuesday, September 21th, 1993']").click();
