@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.awt.font.ImageGraphicAttribute;
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byValue;
@@ -43,7 +44,7 @@ public class TextBoxTests {
         $("[for='hobbies-checkbox-1']").click();
         $("[for='hobbies-checkbox-2']").click();
         $("[for='hobbies-checkbox-3']").click();
-        $("#uploadPicture").uploadFromClasspath(IMG_0063.JPG);
+        $("#uploadPicture").uploadFromClasspath("IMG_0063.JPG");
 
         $("#currentAddress").setValue("Discovery gardens.");                                   // Заполнение поля Current Address
         $("#react-select-3-input").val("Uttar Pradesh").pressEnter();                        // Выбор страны
