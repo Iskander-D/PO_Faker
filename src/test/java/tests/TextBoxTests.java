@@ -1,9 +1,11 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -49,6 +51,24 @@ public class TextBoxTests {
         $("#react-select-4-input").val("Merrut").pressEnter();
 
         $("#submit").pressEnter();
+
+        $(".table-responsive").shouldHave(
+                text("Alexander Drozenko"),
+                text("drozenko21@gmail.com"),
+                text("Male"),
+                text("0506488515"),
+                text("21 October,1993"),
+                text("Arts"),
+                text("Sports, Reading, Music"),
+                text("IMG_0063.JPG"),
+                text("Discovery gardens."),
+                text("Uttar Pradesh Merrut"));
+
+
+
+
+
+
 
 
 
