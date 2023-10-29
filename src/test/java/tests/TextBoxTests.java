@@ -44,8 +44,8 @@ public class TextBoxTests {
 
         $("#uploadPicture").uploadFromClasspath("IMG_0063.JPG");
 
-        $("#currentAddress").setValue("Discovery gardens.");                                   // Заполнение поля Current Address
-        $("#react-select-3-input").val("Uttar Pradesh").pressEnter();                        // Выбор страны
+        $("#currentAddress").setValue("Discovery gardens.");
+        $("#react-select-3-input").val("Uttar Pradesh").pressEnter();
         $("#react-select-4-input").val("Merrut").pressEnter();
 
         $("#submit").pressEnter();
