@@ -41,5 +41,5 @@ bin/
 .DS_Store
 .idea
 .gradle
-.gradlew
-.gradlew.bat
+/gradlew
+/.gradlew.bat

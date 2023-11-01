@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -21,13 +22,14 @@ public class TextBoxTests {
     }
 
     @Test
-    void fillFormTest() {
+    void fillformTest() {
 
         open("/automation-practice-form");
         $("#firstName").setValue("Alexander");
         $("#lastName").setValue("Drozenko");
         $("#userEmail").setValue("drozenko21@gmail.com");
-        $("[for='gender-radio-1']").click();
+        $("#genterWrapper").$(byText("Male")).click();
+        //$("[for='gender-radio-1']").click();
         $("#userNumber").setValue("0506488515");
 
         $("#dateOfBirthInput").click();
