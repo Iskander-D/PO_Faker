@@ -56,6 +56,7 @@ public class RegistrationPageObject extends TextBoxTests {
     {
         registrationForm.openPage()
                     .removePage()
+                    .setFirstName("Alexander")
                     .submit()
                     .checkResult("Address", "Discovery gardens.");
     }

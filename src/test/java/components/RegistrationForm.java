@@ -2,6 +2,7 @@ package components;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -22,14 +23,15 @@ public class RegistrationForm {
             selectState = $("#react-select-3-input"),
             selectCity = $("#react-select-4-input"),
 
-            buttonSubmit = $("#submit");
+    buttonSubmit = $("#submit");
 
 
     public RegistrationForm openPage() {
         open("/automation-practice-form");
         return this;
     }
-        public RegistrationForm removePage() {
+
+    public RegistrationForm removePage() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove");
         return this;
@@ -95,7 +97,8 @@ public class RegistrationForm {
         selectCity.val(value).pressEnter();
         return this;
     }
-    public RegistrationForm submit (){
+
+    public RegistrationForm submit() {
         buttonSubmit.click();
         return this;
     }
@@ -108,6 +111,4 @@ public class RegistrationForm {
     }
 
 }
-
-
 
