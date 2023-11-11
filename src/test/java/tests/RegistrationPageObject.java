@@ -23,7 +23,7 @@ public class RegistrationPageObject extends TextBoxTests {
                 .setCurrentAddress("Discovery gardens.")
                 .setState("Uttar Pradesh")
                 .setCity("Merrut")
-                .submit();
+                .pressSubmit();
 
         registrationForm.checkResult("Student Name", "Alexander Drozenko")
                 .checkResult("Student Email", "drozenko21@gmail.com")
@@ -45,8 +45,9 @@ public class RegistrationPageObject extends TextBoxTests {
                 .setLastName("Drozenko")
                 .setGender("Male")
                 .setCurrentAddress("Discovery gardens.")
-                .submit();
-        registrationForm.checkResult("Student Name","Alexander Drozenko")
+                .pressSubmit();
+
+        registrationForm.checkResult("Student Name", "Alexander Drozenko")
                 .checkResult("Gender", "Male")
                 .checkResult("Address", "Discovery gardens.");
 
@@ -56,9 +57,9 @@ public class RegistrationPageObject extends TextBoxTests {
     {
         registrationForm.openPage()
                     .removePage()
-                    .setFirstName("Alexander")
-                    .submit()
-                    .checkResult("Address", "Discovery gardens.");
+                    .pressSubmit()
+                    .checkNotCompleteForm();
+
     }
 
 }

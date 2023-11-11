@@ -1,15 +1,17 @@
 package components;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.files.DownloadActions.click;
+
 
 public class RegistrationForm {
     CalendarComponents calendarComponents = new CalendarComponents();
+    TableComponents tableComponents = new TableComponents();
     private SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -22,12 +24,12 @@ public class RegistrationForm {
             currentAddress = $("#currentAddress"),
             selectState = $("#react-select-3-input"),
             selectCity = $("#react-select-4-input"),
-
-    buttonSubmit = $("#submit");
+            pressSubmitButton = $("#submit");
 
 
     public RegistrationForm openPage() {
         open("/automation-practice-form");
+
         return this;
     }
 
@@ -98,17 +100,20 @@ public class RegistrationForm {
         return this;
     }
 
-    public RegistrationForm submit() {
-        buttonSubmit.click();
+    public RegistrationForm pressSubmit() {
+        pressSubmitButton.pressEnter();
         return this;
     }
 
     public RegistrationForm checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
+       tableComponents.checkTableResult(key, value);
 
         return this;
     }
+    public RegistrationForm checkNotCompleteForm() {
+        firstNameInput.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
 
+        return this;
+    }
 }
 
