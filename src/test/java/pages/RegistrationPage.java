@@ -80,7 +80,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setPicture(String image) {
+    public RegistrationPage setPicture() {
         uploadPictureInput.uploadFromClasspath("IMG_0063.JPG");
         return this;
     }

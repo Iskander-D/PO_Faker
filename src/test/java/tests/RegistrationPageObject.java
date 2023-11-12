@@ -8,6 +8,7 @@ public class RegistrationPageObject extends TextBoxTests {
 
     @Test
     void fillformTest() {
+
         registrationPage.openPage()
                 .removeBanner()
                 .setFirstName("Alexander")
@@ -20,7 +21,7 @@ public class RegistrationPageObject extends TextBoxTests {
                 .setHobbies("Sports")
                 .setHobbies("Reading")
                 .setHobbies("Music")
-                .setPicture("IMG_0063.JPG")
+                .setPicture()
                 .setCurrentAddress("Discovery gardens.")
                 .setState("Uttar Pradesh")
                 .setCity("Merrut")
