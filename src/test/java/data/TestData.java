@@ -22,10 +22,7 @@ public class TestData {
             picture = faker.options().option("IMG_0063.JPG"),
             streetAddress = faker.address().streetAddress(),
             state = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
-            city = setCity(state),
-            successTitle = "Thanks for submitting the form",
-            color = "rgb(220, 53, 69)",
-            borderColor = "border-color";
+            city = setCity(state);
 
     public String setCity(String state) {
         switch (state) {
