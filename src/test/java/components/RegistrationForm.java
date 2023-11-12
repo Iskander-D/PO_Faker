@@ -115,5 +115,6 @@ public class RegistrationForm {
 
         return this;
     }
+
 }
 

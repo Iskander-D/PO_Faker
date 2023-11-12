@@ -37,19 +37,20 @@ public class RegistrationPageObject extends TextBoxTests {
                 .checkResult("State and City", "Uttar Pradesh Merrut");
     }
     @Test
-    void inputMinimalData()
+    void minimalData()
     {
         registrationForm.openPage()
                 .removePage()
                 .setFirstName("Alexander")
                 .setLastName("Drozenko")
+                .setUserEmail("drozenko21@gmail.com")
                 .setGender("Male")
-                .setCurrentAddress("Discovery gardens.")
+                .setUserNumber("0506488515")
                 .pressSubmit();
-
         registrationForm.checkResult("Student Name", "Alexander Drozenko")
+                .checkResult("Student Email", "drozenko21@gmail.com")
                 .checkResult("Gender", "Male")
-                .checkResult("Address", "Discovery gardens.");
+                .checkResult("Mobile", "0506488515");
 
     }
     @Test
