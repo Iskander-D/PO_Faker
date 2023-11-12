@@ -1,14 +1,15 @@
 package tests;
 
-import components.RegistrationForm;
+import pages.components.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 public class RegistrationPageObject extends TextBoxTests {
-    RegistrationForm registrationForm = new RegistrationForm();
+    RegistrationPage registrationPage = new RegistrationPage();
+
     @Test
     void fillformTest() {
-        registrationForm.openPage()
-                .removePage()
+        registrationPage.openPage()
+                .removeBanner()
                 .setFirstName("Alexander")
                 .setLastName("Drozenko")
                 .setUserEmail("drozenko21@gmail.com")
@@ -25,7 +26,7 @@ public class RegistrationPageObject extends TextBoxTests {
                 .setCity("Merrut")
                 .pressSubmit();
 
-        registrationForm.checkResult("Student Name", "Alexander Drozenko")
+        registrationPage.checkResult("Student Name", "Alexander Drozenko")
                 .checkResult("Student Email", "drozenko21@gmail.com")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "0506488515")
@@ -36,30 +37,30 @@ public class RegistrationPageObject extends TextBoxTests {
                 .checkResult("Address", "Discovery gardens.")
                 .checkResult("State and City", "Uttar Pradesh Merrut");
     }
+
     @Test
-    void minimalData()
-    {
-        registrationForm.openPage()
-                .removePage()
+    void minimalData() {
+        registrationPage.openPage()
+                .removeBanner()
                 .setFirstName("Alexander")
                 .setLastName("Drozenko")
                 .setUserEmail("drozenko21@gmail.com")
                 .setGender("Male")
                 .setUserNumber("0506488515")
                 .pressSubmit();
-        registrationForm.checkResult("Student Name", "Alexander Drozenko")
+        registrationPage.checkResult("Student Name", "Alexander Drozenko")
                 .checkResult("Student Email", "drozenko21@gmail.com")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "0506488515");
 
     }
+
     @Test
-     void negativeTest()
-    {
-        registrationForm.openPage()
-                    .removePage()
-                    .pressSubmit()
-                    .checkNotCompleteForm();
+    void negativeTest() {
+        registrationPage.openPage()
+                .removeBanner()
+                .pressSubmit()
+                .checkNotCompleteForm();
 
     }
 
