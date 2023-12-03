@@ -13,7 +13,7 @@ public class TestData {
             userEmail = faker.internet().emailAddress(),
             gender = faker.options().option("Male", "Female", "Other"),
             userNumber = faker.phoneNumber().subscriberNumber(10),
-            day = String.valueOf(faker.number().numberBetween(1, 28)),
+            day = String.format("%02d", faker.number().numberBetween(1,28)),
             month = faker.options().option("January", "February", "March", "April", "May", "June", "July",
                     "August", "September", "October", "November", "December"),
             year = String.valueOf(faker.number().numberBetween(1990, 2023)),
