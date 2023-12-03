@@ -4,6 +4,8 @@ import data.TestData;
 import org.junit.jupiter.api.Test;
 import pages.components.RegistrationPage;
 
+import static io.qameta.allure.Allure.step;
+
 public class RegistrationWithFakerTest extends TextBoxTests {
 
     RegistrationPage registrationPage = new RegistrationPage();
