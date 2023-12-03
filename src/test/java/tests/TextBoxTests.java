@@ -12,11 +12,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-
+@Tag("simple")
 public class TextBoxTests {
 
     @BeforeAll
-    @Tag("simple")
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
@@ -34,7 +33,6 @@ public class TextBoxTests {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
     @AfterEach
-    @Tag("simple")
 
     void afterTestsRemote() {
         Attach.screenshotAs("Last screenshot");
