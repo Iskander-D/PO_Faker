@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import pages.components.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +8,7 @@ public class RegistrationPageObject extends TextBoxTests {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("simple")
     void fillformTest() {
 
         registrationPage.openPage()
@@ -40,6 +42,7 @@ public class RegistrationPageObject extends TextBoxTests {
     }
 
     @Test
+    @Tag("simple")
     void minimalData() {
         registrationPage.openPage()
                 .removeBanner()
@@ -57,6 +60,7 @@ public class RegistrationPageObject extends TextBoxTests {
     }
 
     @Test
+    @Tag("simple")
     void negativeTest() {
         registrationPage.openPage()
                 .removeBanner()
