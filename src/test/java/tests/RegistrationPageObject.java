@@ -56,7 +56,7 @@ public class RegistrationPageObject extends TextBoxTests {
     }
 
     @Test
-    @Tag("simple")
+    @Tag("positive")
     void minimalData() {
         step("Открываем страницу с формой", () -> {
 
@@ -85,7 +85,7 @@ public class RegistrationPageObject extends TextBoxTests {
     }
 
     @Test
-    @Tag("simple")
+    @Tag("negative")
     void negativeTest() {
 
         step("Открываем страницу с формой", () -> {
