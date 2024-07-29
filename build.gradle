@@ -7,7 +7,7 @@ repositories {
     mavenCentral()
 }
 def allureVersion = "2.21.0",
-    selenideVersion = "6.19.1"
+    selenideVersion = "7.3.3"
 
 compileTestJava{
     options.encoding = 'UTF-8'

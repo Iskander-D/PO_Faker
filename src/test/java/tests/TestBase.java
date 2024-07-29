@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 @Tag("simple")
-public class TextBoxTests {
+public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
@@ -35,12 +35,15 @@ public class TextBoxTests {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+    }
 
+    @AfterEach
+    void afterEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach
-    void afterTestsRemote() {
+    void tearDown() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();

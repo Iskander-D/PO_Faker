@@ -7,14 +7,14 @@ import pages.components.RegistrationPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationWithFakerTest extends TextBoxTests {
+public class RegistrationWithFakerTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
     @Test
     @Tag("simple")
-    void fillformTest() {
+    void fillFormTest() {
 
         registrationPage.openPage()
                 .removeBanner()
@@ -47,7 +47,7 @@ public class RegistrationWithFakerTest extends TextBoxTests {
 
     @Test
     @Tag("positive")
-    void minimalData() {
+    void minimalDataTest() {
         registrationPage.openPage()
                 .removeBanner()
                 .setFirstName(testData.firstName)

@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationPageObject extends TextBoxTests {
+public class RegistrationPageObject extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     @Tag("simple")
-    void fillformTest() {
+    void fillFormTest() {
         step("Открываем страницу с формой", () -> {
 
             registrationPage.openPage();
@@ -26,7 +26,7 @@ public class RegistrationPageObject extends TextBoxTests {
 
                     .setFirstName("Alexander")
                     .setLastName("Drozenko")
-                    .setUserEmail("drozenko21@gmail.com")
+                    .setUserEmail("flan@mail.com")
                     .setGender("Male")
                     .setUserNumber("0506488515")
                     .setDateOfBirth("21", "September", "1993")
