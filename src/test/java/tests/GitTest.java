@@ -16,7 +16,7 @@ public class GitTest {
 
     }
     @Test
-    void fillformTest() {
+    void fillFormTest() {
 
         open("/selenide/selenide");
         $("#wiki-tab").click();
