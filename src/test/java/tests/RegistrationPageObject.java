@@ -4,10 +4,20 @@ import org.junit.jupiter.api.Tag;
 import pages.components.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationPageObject extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
+
+    Calendar calendar = Calendar.getInstance();
+
+    int date = calendar.get(Calendar.DAY_OF_MONTH);
+    String month = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH);
+    int year = calendar.get(Calendar.YEAR);
+
 
     @Test
     @Tag("simple")
@@ -79,7 +89,8 @@ public class RegistrationPageObject extends TestBase {
             registrationPage.checkResult("Student Name", "Alexander Drozenko")
                     .checkResult("Student Email", "drozenko21@gmail.com")
                     .checkResult("Gender", "Male")
-                    .checkResult("Mobile", "0506488515");
+                    .checkResult("Mobile", "0506488515")
+                    .checkResult("Date of Birth", date + " " + month + "," + year);
         });
 
     }
