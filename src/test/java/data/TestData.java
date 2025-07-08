@@ -7,17 +7,24 @@ import java.util.Locale;
 
 public class TestData {
     Faker faker = new Faker(new Locale("fr"));
+//    public static Date DateOfBirthday = faker.date().birthday(); todo самый простой вариант 2
+
 
     public String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             userEmail = faker.internet().emailAddress(),
             gender = faker.options().option("Male", "Female", "Other"),
             userNumber = faker.phoneNumber().subscriberNumber(10),
-//            day = String.format("%02d", faker.number().numberBetween(1, 28)), todo самый простой вариант
+    //        day = String.format("%02d", faker.number().numberBetween(1, 28)), todo самый простой вариант 1
+//            day = String.valueOf(faker.number().numberBetween(1, 28));
+//            dayOfBDay = Integer.toString(faker.number().numberBetween(1, 27));
+//            day = (new SimpleDateFormat("d", Locale.ENGLISH)).format(DateOfBirthday), todo самый простой вариант 2
+//            month = (new SimpleDateFormat("MMMM", Locale.ENGLISH)).format(DateOfBirthday), todo самый простой вариант 2
+//            year = (new SimpleDateFormat("y", Locale.ENGLISH)).format(DateOfBirthday), todo самый простой вариант 2
 
-            month = faker.options().option("January", "February", "March",
-            "April", "May", "June", "July",
-            "August", "September", "October", "November", "December"),
+
+    month = faker.options().option("January", "February", "March",
+            "April", "May", "June", "July", "August", "September", "October", "November", "December"),
             year = String.valueOf(faker.number().numberBetween(1990, 2023)),
             subjects = faker.options().option("Social Studies", "Arts", "Chemistry"),
             hobbies = faker.options().option("Sports", "Reading", "Music"),
