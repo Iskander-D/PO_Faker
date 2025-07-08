@@ -15,7 +15,7 @@ public class TestData {
             userEmail = faker.internet().emailAddress(),
             gender = faker.options().option("Male", "Female", "Other"),
             userNumber = faker.phoneNumber().subscriberNumber(10),
-    //        day = String.format("%02d", faker.number().numberBetween(1, 28)), todo самый простой вариант 1
+    //        day = String.format("%02d", faker.number().numberBetween(1, 28)),  todo самый простой вариант 1
 //            day = String.valueOf(faker.number().numberBetween(1, 28));
 //            dayOfBDay = Integer.toString(faker.number().numberBetween(1, 27));
 //            day = (new SimpleDateFormat("d", Locale.ENGLISH)).format(DateOfBirthday), todo самый простой вариант 2
